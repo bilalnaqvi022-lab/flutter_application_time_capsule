@@ -1,0 +1,86 @@
+name: time_capsule
+description: Seal heartfelt messages in digital capsules locked by date or location — for your future self or loved ones.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── Authentication & Security ────────────────
+  firebase_auth: ^4.19.6            # Email/password authentication
+  firebase_core: ^2.32.0            # Firebase initialisation
+  flutter_secure_storage: ^9.2.2    # Secure JWT / token storage
+  local_auth: ^2.3.0                # Biometric (fingerprint / Face ID) lock
+  crypto: ^3.0.5                    # Password hashing utilities
+
+  # ── Backend / Database ───────────────────────
+  cloud_firestore: ^4.17.5          # Capsule storage and sync
+  sqflite: ^2.3.3+1                 # Local SQLite cache for offline access
+  shared_preferences: ^2.3.2        # Persist theme, language preferences
+
+  # ── Location ─────────────────────────────────
+  geolocator: ^12.0.0               # GPS-based location unlock
+  geocoding: ^3.0.0                 # Reverse geocode coordinates to place name
+
+  # ── Notifications ────────────────────────────
+  flutter_local_notifications: ^17.2.4   # Local push when capsule unlocks
+  firebase_messaging: ^14.9.4            # Remote push notifications
+
+  # ── UI & Animations ──────────────────────────
+  flutter_animate: ^4.5.0           # Declarative animation helpers
+  lottie: ^3.1.2                    # Lottie JSON animations (loading/success)
+  shimmer: ^3.0.0                   # Skeleton loading placeholders
+  google_fonts: ^6.2.1              # Custom font loading (serif/display)
+
+  # ── State Management ─────────────────────────
+  provider: ^6.1.2                  # Lightweight state across screens
+
+  # ── Sharing & Export ─────────────────────────
+  share_plus: ^9.0.0                # Share capsule as text / card
+  screenshot: ^3.0.0                # Capture capsule card as image
+
+  # ── Utilities ────────────────────────────────
+  intl: ^0.19.0                     # Date formatting (unlock dates, countdowns)
+  uuid: ^4.4.2                      # Unique capsule ID generation
+  url_launcher: ^6.3.0              # Open links in profile / explore
+  permission_handler: ^11.3.1       # Runtime permissions (location, notifs)
+  connectivity_plus: ^6.0.3         # Detect offline mode
+  cached_network_image: ^3.3.1      # Cache user avatars and explore images
+  path_provider: ^2.1.4             # Local file system access
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0             # Official Flutter lint rules
+  mockito: ^5.4.4                   # Unit test mocking
+  build_runner: ^2.4.9              # Code generation runner
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/animations/            # Lottie JSON files (splash, seal, unlock)
+    - assets/icons/
+
+  fonts:
+    - family: Playfair
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/PlayfairDisplay-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/PlayfairDisplay-Bold.ttf
+          weight: 700
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
