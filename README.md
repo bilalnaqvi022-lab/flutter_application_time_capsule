@@ -69,30 +69,6 @@ Avatar, capsule stats, preferences (notifications, dark mode, language), securit
 
 ```
 lib/
-├── models/
-│   ├── capsule.dart              # Capsule model, CapsuleStatus, UnlockType enums
-│   └── sample_data.dart          # Demo capsules for development
-│
-├── screens/
-│   ├── splash_screen.dart        # Ring animation + starfield
-│   ├── onboarding_screen.dart    # 3-page PageView with gradient buttons
-│   ├── auth_screen.dart          # Sign in / sign up tabs
-│   ├── home_screen.dart          # Bottom nav shell + FAB
-│   ├── vault_screen.dart         # Capsule list with filters
-│   ├── capsule_detail_screen.dart# Detail view + countdown + peek
-│   ├── create_capsule_screen.dart# 4-step capsule creation wizard
-│   ├── explore_screen.dart       # Templates + community stories
-│   └── profile_screen.dart       # User stats + settings
-│
-├── widgets/
-│   ├── starfield_background.dart # Animated twinkling star canvas
-│   ├── capsule_card.dart         # List tile with status, emoji, masked text
-│   ├── countdown_widget.dart     # Days / Hrs / Min countdown display
-│   ├── stat_chip.dart            # Vault header stat badges
-│   └── nav_item.dart             # Bottom navigation tab item
-│
-├── theme/
-│   └── app_colors.dart           # Color palette and text style constants
 │
 └── main.dart                     # Entry point + MaterialApp
 ```
